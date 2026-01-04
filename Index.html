@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Pookie 💗</title>
+<style>
+body{
+  background:#fff0f5;
+  font-family: Arial, sans-serif;
+  text-align:center;
+  padding:30px;
+}
+.card{
+  background:white;
+  padding:25px;
+  border-radius:20px;
+  box-shadow:0 0 15px rgba(0,0,0,0.1);
+}
+button{
+  background:#ffb6c1;
+  border:none;
+  padding:12px 22px;
+  border-radius:25px;
+  font-size:16px;
+  margin-top:15px;
+}
+#popup{
+  display:none;
+  position:fixed;
+  top:0; left:0;
+  width:100%; height:100%;
+  background:rgba(0,0,0,0.4);
+}
+.popup-box{
+  background:white;
+  margin:40% auto;
+  padding:20px;
+  border-radius:20px;
+  width:80%;
+}
+</style>
+</head>
+<body>
+
+<!-- Music -->
+<audio id="bgMusic" src="music/navya_song.mp3" loop playsinline></audio>
+<button onclick="toggleMusic()">Play/Pause Music 🎶</button>
+
+<div class="card">
+  <h2>Hellooww babee 💋</h2>
+  <p>allee lee lee sir drd hora bacchii ke 🥺🤍</p>
+  <button onclick="openPopup()">Tap (only if u r my pookie) 🧸💗</button>
+</div>
+
+<div id="popup">
+  <div class="popup-box">
+    <p id="msg">heheheh🫂🥹</p>
+    <button onclick="nextMsg()">aur sunna hai? 🫶</button>
+    <br><br>
+    <button onclick="closePopup()">Okay babee 🌸</button>
+    <p style="margin-top:15px;font-size:14px;">
+      
+    </p>
+  </div>
+</div>
+
+<script>
+// Popup messages
+let msgs = [
+ "you are so absofuckinateively addictivee🤤",
+ "Itnii sundar kaise ho yawr tum😻",
+ "sir drd..? lambii lambii saase lo🛐 deep breaths🥰",
+ "pookieee hoo yawrr tm😝",
+ "yk u are my chotuu sa bacchaa😘",
+ "Soo beautifulll u aree Yawrr😭",
+ "i misss uuu smm jaan🥺",
+ "i lovee uuu soo muchh darling💋💋"
+];
+
+let i = 0;
+function openPopup(){ document.getElementById("popup").style.display="block"; }
+function closePopup(){ document.getElementById("popup").style.display="none"; }
+function nextMsg(){ 
+  i = (i+1) % msgs.length; 
+  document.getElementById("msg").innerText = msgs[i]; 
+}
+
+// Music control
+function toggleMusic(){
+ const music = document.getElementById("bgMusic");
+ if(music.paused) music.play();
+ else music.pause();
+}
+
+// Optional: set volume
+document.addEventListener("DOMContentLoaded", ()=>{
+  const music = document.getElementById("bgMusic");
+  music.volume = 0.8;
+});
+</script>
+
+</body>
+</html>
